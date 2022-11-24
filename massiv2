@@ -1,0 +1,49 @@
+#include <iostream> 
+#include <windows.h>
+using namespace std;
+
+int main() {
+
+    system("chcp 1251");
+    system("cls");
+    short array[5]{};
+    short b = 0;
+
+
+
+    for (int j = 0; j < 5; j++) {
+
+
+        cout << "[ " << j << " ] Введите число : ";
+        cin >> b;
+        array[j] = b;
+    }
+
+
+
+
+    system("cls");
+    for (short i = 0; i < 5; i++) {
+
+        cout << "| Таблица:  " << i << endl;
+        cout << "---------------------------------\n";
+        cout << "|Число|" << "Пример  " << "|Результат \t|\n";
+        cout << "---------------------------------\n";
+        cout << "|  " << array[i] << "  |  " << array[i] << "+" << array[i] << " |    " << array[i] + array[i] << "     \t|\n";
+        cout << "---------------------------------\n";
+        cout << "|  " << array[i] << "  |  " << array[i] << "-" << array[i] << " |    " << array[i] - array[i] << "     \t|\n";
+        cout << "---------------------------------\n";
+        cout << "|  " << array[i] << "  |  " << array[i] << "/" << array[i] << " |    " << array[i] / array[i] << "     \t|\n";
+        cout << "---------------------------------\n";
+        cout << "|  " << array[i] << "  |  " << array[i] << "*" << array[i] << " |    " << array[i] * array[i] << "     \t|\n";
+        cout << "---------------------------------\n\n";
+
+
+
+
+
+
+    }
+    system("pause");
+}
+
