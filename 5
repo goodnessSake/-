@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	printf("Калькулятор запущен!\n");
+	int num1, num2, suma, minus, del, umn;
+	string znack;
+	cout << ("Введите первое число: ");
+	cin >> num1;
+	cout << ("Введите второе число: ");
+	cin >> num2;
+	cout << ("Что вы хотите сделать? * ,или +, или -,или /,или %") << endl;
+	cin >> znack;
+	if (znack == "+")
+	{
+		suma = num1 + num2;
+		cout << "Результат суммы: " << suma << endl;
+	}
+	else if (znack == "-")
+	{
+		minus = num1 - num2;
+		cout << "Результат вычитания: " << minus << endl;
+	}
+	else if (znack == "*")
+	{
+		umn = num1 * num2;
+		cout << "Результат умножения: " << umn << endl;
+	}
+	else if (znack == "/")
+	{
+		del = num1 / num2;
+		cout << "Результат деления: " << del << endl;
+	}
+
+	else if (znack == "%")
+	{
+		del = num1 % num2;
+		cout << "Результат деления от остатка: " << del << endl;
+	}
+
+}
