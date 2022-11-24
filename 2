@@ -1,0 +1,26 @@
+#include <iostream>
+#include <Windows.h>
+
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    using namespace std;
+    cout << "какое время года? (1-лето; 2-осень; 3-зима; 4-весна)" << endl;
+    char seazon;
+    cin >> seazon;
+    if (seazon == '1')
+        cout << "сейчас лето,на улице очень жарко";
+    else
+        if (seazon == '2')
+            cout << "сейчас осень,следует одеться тепло и взять с собой зонт ";
+        else
+            if (seazon == '3')
+                cout << "сейчас зима,гололед и метель,лучше не выходите из дома";
+            else
+                if (seazon == '4')
+                    cout << "сейчас весна,прохладно,но светит солнце  ";
+                else
+                    cout << "такого времени года не существует";
+
+    return 0;
+}
