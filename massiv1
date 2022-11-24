@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int number1[10] = { 1 , 2 , 3 ,4 , 5 , 6 , 7 , 8 , 9 , 10 };
+    long number2[10] = { 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 };
+    short number3[10] = { 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 };
+
+    float var1[10]{ 1.1, 2.2 , 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.10 };
+    double var2[10]{ 1.1, 2.2 , 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.10 };
+
+    char chvar[10]{ 'h','e','l','l','o',' ','m','a','k','s' };
+
+
+    string stvar[10]{ "hi"," ","Maark","!","How"," ", "are" , " ", "you", "?" };
+
+    bool bovar[10]{ true , false , true , false , true , false , true , true , true , false };
+
+
+    system("chcp 1251");
+    system("cls");
+    cout << "[ + ] Массив INT:\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << number1[n] << endl;
+    }
+
+    cout << "[ + ] Массив LONG:\n\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << number2[n] << endl;
+    }
+    cout << "[ + ] Массив SHORT:\n\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << number3[n] << endl;
+    }
+    cout << "[ + ] Массив FLOAT:\n\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << var1[n] << endl;
+    }
+    cout << "[ + ] Массив DOUBLE:\n\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << var2[n] << endl;
+    }
+    cout << "[ + ] Массив CHAR:\n\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << chvar[n] << endl;
+    }
+    cout << "[ + ] Массив STRING:\n\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << stvar[n] << endl;
+    }
+    cout << "[ + ] Массив BOOL:\n\n";
+    for (short n = 0; n < 10; n++) {
+        cout << "[+] arrInt[" << n << "]" << "значение:" << bovar[n] << endl;
+    }
+
+
+
+}
+
