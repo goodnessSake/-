@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "");
+   cout << "Введите число: " << endl;
+   double x;
+   cin >> x;
+   if (0 <= x && x <= 10) {
+	   cout << "Цифра в диапозоне: 0 - 10" << endl;
+   } else 
+   if (10 <= x && x <= 20) {
+		   cout << "Цифра в диапозоне: 10 - 20" << endl;
+   }
+   else
+   if (20 <= x && x <= 30) {
+		cout << "Цифра в диапозоне: 20 - 30" << endl;
+   }
+   else
+	if (30 <= x && x <= 40) {
+		cout << "Цифра в диапозоне: 30 - 40" << endl;
+    }
+	else
+	 if(40 <= x && x <= 50) {
+	cout << "Цифра в диапозоне: 40 - 50" << endl;
+	 }
+	 else
+	if(50 <= x && x <= 60) {
+	cout << "Цифра в диапозоне: 50 - 60" << endl;
+	}
+	 else
+	if (60 <= x && x <= 70) {
+	 cout << "Цифра в диапозоне: 60 - 70" << endl;
+	}
+	 else
+	if (70 <= x && x <= 80) {
+	 cout << "Цифра в диапозоне: 70 - 80" << endl;
+    }
+	 else
+	if (80 <= x && x <= 90) {
+	 cout << "Цифра в диапозоне: 80 - 90" << endl;
+	 }
+	else
+	if (90 <= x && x <= 10) {
+	cout << "Цифра в диапозоне: 90 - 100" << endl;
+	 }
+    else 
+	 if (x < 0)
+	 {
+	 cout << "Ошибка! Число меньше 0" << endl;
+	 }
+	 else
+	 if (x > 100) {
+	  cout << "Ошибка! число больше 100" << endl;
+	 }
+   system("pause");
+   return 0;
+
+}
+
