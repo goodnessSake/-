@@ -1,0 +1,780 @@
+
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+
+
+string question = "1";
+string numlife = "1";
+string playername = "player";
+short life = 1;
+
+int main() {
+	system("chcp 1251");
+
+
+
+	while (true) {
+
+		system("cls");
+
+
+		cout << "------------------------[+] Викторин [+]-------------------------------------------------------------------------------\n\n";
+		cout << "___________________\n";
+		cout << "|[1] Начать игру   |\n";
+		cout << "|[2] Настройки     |\n";
+		cout << "|[3] Правила игры  |\n";
+		cout << "|[4] Выход         |\n";
+		cout << "|__________________|\n";
+		cout << "Сделали >>> ";
+		cout << "{Яндутова} \t";
+		cout << "<Гордеева> \t\n\n\n\n";
+		cout << "[+] Выбрать: ";
+
+
+		string menu;
+		cin >> menu;
+
+
+
+
+
+
+
+		//settings
+		if (menu == "2") {
+			string settings;
+			system("cls");
+
+
+			system("cls");
+			cout << "_________________________";
+			cout << "|[+] Вы вошли в настройки [+] |\n";
+			cout << "|{1} Выбрать цвет        |\n";
+			cout << "|{2} Количество вопросов |\n";
+			cout << "|{3} Количество попыток  |\n";
+			cout << "|{4} Имя игрока          |\n";
+			cout << "|{5} Назад               |\n";
+			cout << "|________________________|\n";
+			cout << "[+] Выбрать: ";
+
+
+			cin >> settings;
+			//color
+			if (settings == "1") {
+
+				system("cls");
+				cout << "\x1b[97m_________________________\x1b[0m\n";
+				cout << "| Выберите цвет консоли  |\n";
+				cout << "|[1] \x1b[97mБелый     \x1b[0m          |\n";
+				cout << "|[2] \x1b[94mСиний   \x1b[0m            |\n";
+				cout << "|[3] \x1b[91mКрасный \x1b[0m            |\n";
+				cout << "|[4] Назад               |\n";
+				cout << "|________________________|\n";
+				cout << "[+] Выбрать: ";
+
+				string colore;
+
+				cin >> colore;
+				if (colore == "1") {
+
+					system("color 07");
+					cout << "Настройка завершена.\n";
+					system("pause");
+
+				}
+
+				if (colore == "2") {
+					system("color 01");
+					cout << "Настройка завершена.\n";
+					system("pause");
+
+				}
+
+				if (colore == "3") {
+					system("color 04");
+					cout << "Настройка завершена.\n";
+					system("pause");
+
+				}
+
+
+			}
+			//question
+			if (settings == "2") {
+				system("cls");
+				cout << "_________________________";
+				cout << "|Выберите количество вопросов|\n";
+				cout << "|[1] 5 вопросов          |\n";
+				cout << "|[2] 10 вопросов         |\n";
+				cout << "|________________________|\n";
+
+				cout << "[+] Выбрать: ";
+
+
+				cin >> question;
+
+
+				if (question == "1" || question == "2")
+				{
+
+
+					cout << "Настройка завершена.\n";
+					system("pause");
+					continue;
+				}
+				else {
+					cout << " * Ошибка * \n";
+					cout << "Введите правильную команду.\n";
+					cout << "Настройки сброшены по умолчанию.\n";
+					system("pause");
+					question = "1";
+					continue;
+				}
+
+
+			}
+			//life
+			if (settings == "3") {
+				system("cls");
+				cout << "_________________________";
+				cout << "|[+] Выберите количество попыток[+] |\n";
+				cout << "|[1] 1 попытка          |\n";
+				cout << "|[2] 2 попытки          |\n";
+				cout << "|[3] 3 попытки          |\n";
+				cout << "|_______________________|\n";
+				cout << "[+] Выбрать: ";
+
+
+				cin >> numlife;
+
+				if (numlife == "1" || numlife == "2" || numlife == "3") {
+
+					cout << "Настройка завершена.\n";
+					system("pause");
+					continue;
+				}
+				else {
+					cout << " * Ошибка * \n";
+					cout << "Введите правильную команду.\n";
+					cout << "Настройки сброшены по умолчанию.\n";
+					system("pause");
+					numlife = "1";
+					continue;
+				}
+
+
+
+			}
+			//playername
+			if (settings == "4") {
+				system("cls");
+
+				cout << "_________________________\n";
+				cout << "|[1] Поменять имя        |\n";
+				cout << "|[2] Назад               |\n";
+				cout << "|________________________|\n";
+				cout << "[+] Выбрать: ";
+
+
+				string _;
+				cin >> _;
+				if (_ == "1") {
+					cout << "[1] Введите имя: ";
+
+					cin >> playername;
+
+					cout << "Ваш никнейм: " << playername << endl;
+					cout << "Настройка завершена\n";
+
+					system("pause");
+				}
+				else if (_ != "2" && _ != "1") {
+					cout << " * Ошибка * \n";
+					cout << "Введите правильную команду.\n";
+
+					system("pause");
+
+					continue;
+				}
+
+
+
+			}
+			//back
+			if (settings == "5") {
+				continue;
+			}
+
+
+
+
+
+		}
+		//play
+		if (menu == "1") {
+			short point = 0;
+			system("cls");
+			cout << "                Игра началась!\n";
+			cout << " Ваш никнейм: " + playername << endl;
+
+			if (question == "1") {
+
+
+				cout << "Количество вопросов: 5" << endl;
+			}
+			else if (question == "2")
+			{
+				cout << "Количество вопросов: 10" << endl;
+			}
+			if (numlife == "1") {
+				life = 1;
+			}
+			if (numlife == "2") {
+				life = 2;
+			}
+			if (numlife == "3") {
+				life = 3;
+			}
+			cout << "Количество попыток: " << life << endl;
+			cout << "Количество очков:  " << point << endl;
+			system("pause");
+			system("cls");
+			string otvet;
+
+
+
+			// 5 question  
+
+			  //1 question
+			if (question == "1") {
+
+				cout << "№1 Богатая женщина Джозефин Кокран устала от слуг, ломающих ее тарелки и изобрела... \n\n";
+				cout << "[1] Посудомоечную машину\t\t\t";
+				cout << "[2] Бумажные тарелки\n\n";
+				cout << "[3] Мягкие ковры для кухни\t\t\t";
+				cout << "[4] Отдел переработки разбитых тарелок\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "1") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "3" || otvet == "4") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+
+
+				//2 question
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№2 В каком году компанией IBM был выпущен первый в истории жесткий диск?  \n\n";
+				cout << "[1] В 1956 году\t\t\t";
+				cout << "[2] В 1958 году\n\n";
+				cout << "[3] В 1955 году\t\t\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+
+				if (otvet == "1") {
+					point += 10;
+				}
+				if ( otvet == "2" || otvet == "3") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+
+
+
+
+				//question 3
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№3 В Древнем Египте у слуг было принято обмазывать себя медом, чтобы \n\n";
+				cout << "[1] Было легче перетаскивать груз\t\t\t";
+				cout << "[2] Для получения больше лучей солнца\n\n";
+				cout << "[3] Великий бог Муран отблагодари их своим дождём\t";
+				cout << "[4] Для отвлечения насмекомых от фараона\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "4") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "3" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+
+
+				//question 4
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№4 Если собаки умели говорить, то они бы... \n\n";
+				cout << "[1] Смогли бы превзойти нас\t\t\t";
+				cout << "[2] Шепелявили\n\n";
+				cout << "[3] Поработили нас\t\t\t\t";
+				cout << "[4] Не смогли выговаривать букву 'C' \n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "2") {
+					point += 10;
+				}
+				if (otvet == "1" || otvet == "3" || otvet == "4") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+
+
+				//question 5
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№5 Низкий уровень холестерина в крови провоцирует ... \n\n";
+				cout << "[1] Потоки любви\t\t\t";
+				cout << "[2] Расслабление организма\n\n";
+				cout << "[3] Агрессию\t\t\t\t";
+				cout << "[4] Умиротворение\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "3") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "1" || otvet == "4") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+
+				system("cls");
+				cout << "Вы победили! \n";
+
+				system("pause");
+				continue;
+			}
+
+
+
+
+
+
+
+			// 10 question
+
+			 //question 1
+			else if (question == "2") {
+				cout << "№1 Множественные татуировки на теле способны... \n\n";
+				cout << "[1] Разрушить нервную систему\t\t\t";
+				cout << "[2] Вызывать тревожные сны\n\n";
+				cout << "[3] Укрепить иммунитет\t\t\t\t";
+				cout << "[4] Загрязнить кровопотоки\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "3") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "1" || otvet == "4") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+
+				//question 2
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№2 Чарли Чаплин: “Мой смех никогда не должен быть …” \n\n";
+				cout << "[1] Раздражительным\t\t\t";
+				cout << "[2] Унижать других людей\n\n";
+				cout << "[3] Грустным\t\t\t\t";
+				cout << "[4] Причиной чей-то боли\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "4") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "3" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 3
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№3 Откуда пошло выражение «деньги не пахнут? \n\n";
+				cout << "[1] От подателей за провоз парфюмерии\t\t\t";
+				cout << "[2] От сборов за нестиранные носки\n\n";
+				cout << "[3] От налога на туалеты\t\t\t\t";
+				cout << "[4] От неопытных рабочих\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "3") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "4" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 4
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№4 Кто из президентов США написал свой собственный рассказ про Шерлока Холмса? \n\n";
+				cout << "[1] Рональд Рейган\t\t\t";
+				cout << "[2] Франклин Рузвельт\n\n";
+				cout << "[3] Джон Кеннеди\t\t\t";
+				cout << "[4] Гретта Тунберг\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "2") {
+					point += 10;
+				}
+				if (otvet == "3" || otvet == "4" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 5
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№5 Какую пошлину ввели в XII  веке в Англии для того чтобы заставить мужчин пойти на войну? \n\n";
+				cout << "[1] Налог на тунеядство\t\t\t";
+				cout << "[2] Налог на трусость\n\n";
+				cout << "[3] Налог на отсутствие сапог\t\t";
+				cout << "[4] Налог на тупость\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "2") {
+					point += 10;
+				}
+				if (otvet == "3" || otvet == "4" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 6
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№6 Основой для «Сказки о рыбаке и рыбке Пушкина послужила сказка братьев Гримм «Рыбак и его жена». В ней немецкая «коллега» нашей старухи превратилась в: \n\n";
+				cout << "[1] Папу Римского\t\t\t";
+				cout << "[2] Королеву\n\n";
+				cout << "[3] Директора рыбзавода\t\t\t";
+				cout << "[4] Командира отряда водолазов\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "1") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "4" || otvet == "3") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 7
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№7 Российский мультфильм, удостоенный «Оскара», — это… \n\n";
+				cout << "[1] «Простоквашино»\t\t\t";
+				cout << "[2] «Винни-Пух»\n\n";
+				cout << "[3] «Старик и море»\t\t\t";
+				cout << "[4] «Ну, погоди!»\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "3") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "4" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 8
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№8 Что в Российской империи было вещевым эквивалентом денег? \n\n";
+				cout << "[1] Крупный рогатый скот\t\t\t";
+				cout << "[2] Табак\n\n";
+				cout << "[3] Женские серьги\t\t\t\t";
+				cout << "[4] Шкуры пушных зверей\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "4") {
+					point += 10;
+				}
+				if (otvet == "2" || otvet == "3" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 9
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№9 У индейцев из немногочисленного североамериканского племени квакиутл есть традиция: беря деньги в долг, они оставляют в залог… \n\n";
+				cout << "[1] Душу\t\t\t";
+				cout << "[2] Имя\n\n";
+				cout << "[3] Скальп тещи\t\t\t";
+				cout << "[4] Амулет\n\n";
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "2") {
+					point += 10;
+				}
+				if (otvet == "3" || otvet == "4" || otvet == "1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+				else if (otvet != "1" && otvet != "2" && otvet != "3" && otvet != "4")
+				{
+					cout << "Ошибка! Вы вписали не то\n";
+					system("pause");
+					system("cls");
+					continue;
+				}
+				//question 10
+				system("cls");
+				cout << "Количество очков: " << point << endl;
+				cout << "Количество попыток: " << life << endl;
+				system("pause");
+				system("cls");
+				cout << "№10 Назовите наибольшее отрицательное число \n\n";
+
+				cout << "Ответ: ";
+				cin >> otvet;
+				if (otvet == "-1") {
+					point += 10;
+				}
+				if (otvet != "-1") {
+					--life;
+					point -= 10;
+					if (life == 0) {
+						cout << " Вы проиграли!У вас нет больше попыток.\n ";
+						system("pause");
+						continue;
+					}
+				}
+
+				system("cls");
+				cout << "Вы победили! \n";
+				system("pause");
+				continue;
+			}
+
+
+		}
+		//rules
+		if (menu == "3") {
+			system("cls");
+			cout << "-------------------------------------[+]Правила игры[+]-----------------------------------------------------------------\n\n";
+			cout << "  <(+)> Отвечаете на вопрос: 1 , 2 , 3 , 4 или ввести число\n\n";
+			cout << "  <(+)> Если отвечаете не правильно: -10 очко, -1 попытка\n\n";
+			cout << "  <(+)> Если не останется попыток - вы проиграли\n\n";
+			cout << "  <(+)> Если отвечаете правильно: +10 очко\n\n";
+			cout << "  <(**)> Цель игры: ответить на все вопросы правильно.\n\n\n\n\n\n\n";
+
+
+			system("pause");
+			continue;
+		}
+		//exit
+		if (menu == "4") {
+			break;
+		}
+		//feedback
+		if (menu == "5") {
+
+
+		}
+
+		else {
+			cout << "EROR!>?>$!#%\n" << endl;
+
+			continue;
+		}
+	}
+
+}
+
