@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(0, "Russian");
+    int a, user_imput = 0;
+    int count = 9;
+    cout << "Введите число" << endl;
+    cin >> a;
+    for (int b = 1; b = count; b++) {
+        cout << "Решите пример: " << a << "*" << b << endl;
+        cout << "Ответ: " << endl;
+        cin >> user_imput;
+        break;
+        if (user_imput == a * b) {
+            cout << " Пример решён правильно!" << endl;
+        }
+        else {
+            cout << "Ошибка!Пример решён неверно!" << endl;
+            break;
+        }
+        if (b = count) {
+            cout << "Все примеры решены правильно" << endl;
+        }
+    }
+    return 0;
+}
+
